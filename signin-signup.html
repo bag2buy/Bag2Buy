@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In / Sign Up - Bag2Buy</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .auth-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    h2 {
+      text-align: center;
+      color: #2a9d8f;
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      color: #333;
+      font-weight: 600;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .btn {
+      width: 100%;
+      background-color: #2a9d8f;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #21867a;
+    }
+    .switch {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+    .switch a {
+      color: #e76f51;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-container" id="formContainer">
+    <h2 id="formTitle">Sign In</h2>
+    <form id="authForm">
+      <label>Email</label>
+      <input type="email" required />
+
+      <label>Password</label>
+      <input type="password" required />
+
+      <button class="btn" type="submit">Login</button>
+
+      <div class="switch">
+        Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const formContainer = document.getElementById('formContainer');
+    const authForm = document.getElementById('authForm');
+    const formTitle = document.getElementById('formTitle');
+
+    function toggleForm() {
+      const isLogin = formTitle.textContent === 'Sign In';
+      formTitle.textContent = isLogin ? 'Sign Up' : 'Sign In';
+      authForm.innerHTML = isLogin
+        ? `
+        <label>Full Name</label>
+        <input type="text" required />
+
+        <label>Email</label>
+        <input type="email" required />
+
+        <label>Password</label>
+        <input type="password" required />
+
+        <button class="btn" type="submit">Register</button>
+        <div class="switch">
+          Already have an account? <a href="#" onclick="toggleForm()">Sign In</a>
+        </div>`
+        : `
+        <label>Email</label>
+        <input type="email" required />
+
+        <label>Password</label>
+        <input type="password" required />
+
+        <button class="btn" type="submit">Login</button>
+        <div class="switch">
+          Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a>
+        </div>`;
+    }
+  </script>
+
+</body>
+</html>
