@@ -1,166 +1,177 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bag2Buy - Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bag2Buy - Buy & Sell Old & New Items</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
+    /* Basic Reset */
+    * {
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #333;
+      line-height: 1.6;
     }
     header {
-      background: #007bff;
-      color: #fff;
-      padding: 1rem 2rem;
+      background-color: #2a9d8f;
+      color: white;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      cursor: pointer;
     }
     nav a {
       color: white;
-      margin: 0 1rem;
       text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
-    .container {
-      padding: 2rem;
+    nav a:hover {
+      color: #e9c46a;
+    }
+    .hero {
+      padding: 60px 20px;
       text-align: center;
-    }
-    button.primary {
-      padding: 0.7rem 1.5rem;
-      background-color: #007bff;
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;
       color: white;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+    .btn-primary {
+      background-color: #e76f51;
+      padding: 14px 30px;
       border: none;
-      border-radius: 5px;
+      border-radius: 30px;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 700;
       cursor: pointer;
-    }/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-}
-.modal-content {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  max-width: 400px;
-  width: 90%;
-}
-.tabs {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 1rem;
-}
-.tabs button {
-  flex: 1;
-  padding: 0.5rem;
-  background: #f0f0f0;
-  border: none;
-  cursor: pointer;
-}
-.tabs button.active {
-  background: #007bff;
-  color: white;
-}
-.form-group {
-  margin-bottom: 1rem;
-  text-align: left;
-}
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-.form-group input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background-color: #d6543a;
+    }
+    .features {
+      max-width: 1000px;
+      margin: 40px auto;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 0 20px;
+    }
+    .feature-box {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      flex: 1 1 280px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .feature-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .feature-box h3 {
+      margin-bottom: 15px;
+      color: #264653;
+    }
+    .feature-box p {
+      color: #555;
+      font-size: 1rem;
+    }
+    footer {
+      background: #264653;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 60px;
+    }
 
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 10px;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .features {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
   </style>
 </head>
-<body><header>
-  <h1>Bag2Buy</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="#cart">Cart</a>
-    <a href="#wallet">Wallet</a>
-    <button class="primary" onclick="document.getElementById('modal').style.display='flex'">Login / Signup</button>
-  </nav>
-</header><div class="container">
-  <h2>Welcome to Bag2Buy</h2>
-  <p>Buy, Sell, or Borrow books & clothes at the best prices!</p>
-</div><!-- Modal --><div class="modal" id="modal">
-  <div class="modal-content">
-    <div class="tabs">
-      <button id="showLogin" class="active" onclick="toggleForm('login')">Login</button>
-      <button id="showSignup" onclick="toggleForm('signup')">Signup</button>
-    </div><!-- Login Form -->
-<div id="loginForm">
-  <div class="form-group">
-    <label>Email</label>
-    <input type="email" placeholder="Enter your email">
-  </div>
-  <div class="form-group">
-    <label>Password</label>
-    <input type="password" placeholder="Enter your password">
-  </div>
-  <button class="primary">Login</button>
-</div>
+<body>
 
-<!-- Signup Form -->
-<div id="signupForm" style="display:none">
-  <div class="form-group">
-    <label>Full Name</label>
-    <input type="text" placeholder="Enter full name">
-  </div>
-  <div class="form-group">
-    <label>Email</label>
-    <input type="email" placeholder="Enter your email">
-  </div>
-  <div class="form-group">
-    <label>Password</label>
-    <input type="password" placeholder="Create a password">
-  </div>
-  <button class="primary">Signup</button>
-</div>
+  <header>
+    <h1>Bag2Buy</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Buy Items</a>
+      <a href="#">Sell Items</a>
+      <a href="#">Wallet</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-  </div>
-</div><script>
-function toggleForm(type) {
-  const login = document.getElementById('loginForm');
-  const signup = document.getElementById('signupForm');
-  const showLogin = document.getElementById('showLogin');
-  const showSignup = document.getElementById('showSignup');
+  <section class="hero">
+    <h2>Buy, Sell & Borrow Old and New Items Easily</h2>
+    <p>Get cash instantly for your old stuff and enjoy platform credits to shop more. Safe, easy & reliable.</p>
+    <a href="#" class="btn-primary">Start Selling Now</a>
+  </section>
 
-  if (type === 'login') {
-    login.style.display = 'block';
-    signup.style.display = 'none';
-    showLogin.classList.add('active');
-    showSignup.classList.remove('active');
-  } else {
-    login.style.display = 'none';
-    signup.style.display = 'block';
-    showLogin.classList.remove('active');
-    showSignup.classList.add('active');
-  }
-}
+  <section class="features">
+    <div class="feature-box">
+      <h3>Instant Cash Offers</h3>
+      <p>Sell your items quickly and get 20% cash upfront, balance as platform credit.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Wide Variety of Products</h3>
+      <p>Books, clothes, electronics & more. Find what you need or sell with ease.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Secure Wallet System</h3>
+      <p>Manage your earnings and spend your platform credits seamlessly within Bag2Buy.</p>
+    </div>
+  </section>
 
-// Close modal when clicking outside
-window.onclick = function(event) {
-  const modal = document.getElementById('modal');
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script></body>
-  </html>
+  <footer>
+    <p>© 2025 Bag2Buy. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
