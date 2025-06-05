@@ -1,4 +1,4 @@
-## Hi there 👋
+
 // Bag2Buy Complete Basic React App with Routing and Pages Setup
 
 import React from "react"; import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
