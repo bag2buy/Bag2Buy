@@ -1,4 +1,49 @@
 ## Hi there 👋
+// Bag2Buy Complete Basic React App with Routing and Pages Setup
+
+import React from "react"; import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+
+function App() { return ( <Router> <div className="min-h-screen bg-gray-50"> <nav className="flex items-center justify-between p-4 bg-green-600 text-white"> <div className="text-xl font-bold">Bag2Buy</div> <div className="space-x-4"> <Link to="/" className="hover:underline">Home</Link> <Link to="/login" className="hover:underline">Login</Link> <Link to="/signup" className="hover:underline">Signup</Link> <Link to="/wallet" className="hover:underline">Wallet</Link> <Link to="/cart" className="hover:underline">Cart</Link> <Link to="/about" className="hover:underline">About</Link> <Link to="/contact" className="hover:underline">Contact</Link> </div> </nav>
+
+<Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/wallet" element={<Wallet />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
+
+    <a
+      href="https://wa.me/919999999999"
+      className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      WhatsApp
+    </a>
+  </div>
+</Router>
+
+); }
+
+function Home() { return <div className="p-4 text-xl">Welcome to Bag2Buy - Becho, Kharido, Borrow Asaani Se!</div>; }
+
+function Login() { return <div className="p-4">Login Page (Coming Soon)</div>; }
+
+function Signup() { return <div className="p-4">Signup Page (Coming Soon)</div>; }
+
+function Wallet() { return <div className="p-4">Wallet Page (Coming Soon)</div>; }
+
+function Cart() { return <div className="p-4">Cart Page (Coming Soon)</div>; }
+
+function About() { return <div className="p-4">About Us Page (Coming Soon)</div>; }
+
+function Contact() { return <div className="p-4">Contact Us Page (Coming Soon)</div>; }
+
+export default App;
+
 
 <!--
 **bag2buy/Bag2Buy** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
