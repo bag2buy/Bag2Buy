@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bag2Buy - Sign In / Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
+    body { background: #f3f4f6; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .container { width: 100%; max-width: 400px; background: white; padding: 2rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; }
+    h2 { text-align: center; margin-bottom: 1rem; color: #333; }
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px;
+    }
+    button {
+      width: 100%; padding: 0.75rem; background: #1e40af; color: white; border: none; border-radius: 5px; cursor: pointer;
+    }
+    button:hover { background: #1c3faa; }
+    .toggle {
+      margin-top: 1rem; text-align: center; font-size: 0.9rem;
+    }
+    .toggle a { color: #1e40af; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container" id="form-box">
+    <h2 id="form-title">Sign In</h2>
+    <form id="auth-form">
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Sign In</button>
+    </form>
+    <div class="toggle">
+      Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a>
+    </div>
+  </div>  <script>
+    const formBox = document.getElementById('form-box');
+    const formTitle = document.getElementById('form-title');
+    const authForm = document.getElementById('auth-form');
+
+    function toggleForm() {
+      const isSignIn = formTitle.textContent === 'Sign In';
+      formTitle.textContent = isSignIn ? 'Sign Up' : 'Sign In';
+      authForm.innerHTML = isSignIn
+        ? `<input type="text" placeholder="Full Name" required />
+           <input type="email" placeholder="Email" required />
+           <input type="password" placeholder="Password" required />
+           <button type="submit">Sign Up</button>`
+        : `<input type="email" placeholder="Email" required />
+           <input type="password" placeholder="Password" required />
+           <button type="submit">Sign In</button>`;
+
+      document.querySelector('.toggle').innerHTML = isSignIn
+        ? 'Already have an account? <a href="#" onclick="toggleForm()">Sign In</a>'
+        : "Don't have an account? <a href=\"#\" onclick=\"toggleForm()\">Sign Up</a>";
+    }
+  </script></body>
+</html>
