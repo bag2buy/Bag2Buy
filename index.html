@@ -1,47 +1,70 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bag2Buy</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bag2Buy - Buy, Sell, Borrow</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .navbar {
+      background-color: #007bff;
+    }
+    .navbar-brand, .nav-link, .navbar-toggler-icon {
+      color: white !important;
+    }
+    .hero {
+      background: url('https://source.unsplash.com/1600x600/?shopping,books') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 5px #000;
+    }
+    .section {
+      padding: 60px 20px;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <h1 class="logo">Bag2Buy</h1>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-        <li><a href="#wallet">Wallet</a></li>
-        <li><a href="#cart">View Cart</a></li>
-        <li><a href="#login">Login</a></li>
-      </ul>
-      <button class="hamburger" onclick="toggleMenu()">☰</button>
-    </nav>
-  </header>  <section id="home">
-    <h2>Welcome to Bag2Buy</h2>
-    <p>Buy, Sell, or Borrow books and clothes easily!</p>
-    <a href="https://wa.me/your_number" class="whatsapp-button">Chat on WhatsApp</a>
-  </section>  <section id="about">
-    <h2>About Us</h2>
-    <p>Bag2Buy is your digital second-hand showroom for buying, selling, or borrowing items.</p>
-  </section>  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: support@bag2buy.com</p>
-    <p>Phone: +91-XXXXXXXXXX</p>
-  </section>  <section id="wallet">
-    <h2>Your Wallet</h2>
-    <p>Track your Biklo Wallet balance and transaction history here.</p>
-  </section>  <section id="cart">
-    <h2>Your Cart</h2>
-    <p>View items you added for purchase or borrowing.</p>
-  </section>  <section id="login">
-    <h2>Login / Sign Up</h2>
-    <button onclick="alert('Login clicked')">Login</button>
-    <button onclick="alert('Sign Up clicked')">Sign Up</button>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Bag2Buy</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#login">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>  <div class="hero">
+    <h1>Welcome to Bag2Buy</h1>
+  </div>  <section class="section" id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>Bag2Buy is your one-stop platform to buy, sell, borrow, or lend books and clothes. We believe in sustainable shopping and giving items a second life.</p>
+    </div>
+  </section>  <section class="section bg-light" id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Have questions or suggestions? Reach out to us at <a href="mailto:info@bag2buy.com">info@bag2buy.com</a></p>
+    </div>
   </section>  <footer>
-    <p>&copy; 2025 Bag2Buy. All rights reserved.</p>
-  </footer></body>
-</html>
+    <div class="container">
+      <p>&copy; 2025 Bag2Buy. All rights reserved.</p>
+    </div>
+  </footer>  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script></body>
+  </html>
