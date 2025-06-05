@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Bag2Buy</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f5f9;
+      color: #333;
+    }
+    header {
+      background-color: #2a9d8f;
+      padding: 20px 40px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #e9c46a;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2a9d8f;
+      margin-bottom: 15px;
+    }
+    form label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: none;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #2a9d8f;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #21867a;
+    }
+    .whatsapp-button {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .whatsapp-button a {
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 50px;
+      display: inline-block;
+    }
+    footer {
+      background: #264653;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bag2Buy</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signin-signup.html">Login</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>Have questions or need help? Fill out the form below or WhatsApp us directly.</p>
+
+    <form>
+      <label>Name</label>
+      <input type="text" required />
+
+      <label>Email</label>
+      <input type="email" required />
+
+      <label>Your Message</label>
+      <textarea rows="5" required></textarea>
+
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+
+    <div class="whatsapp-button">
+      <a href="https://wa.me/91XXXXXXXXXX" target="_blank">Chat on WhatsApp</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Bag2Buy. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
