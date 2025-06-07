@@ -1,249 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bag2Buy - Buy & Sell Old & New Items</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bag2Buy - Becho, Kharido, Borrow</title>
   <style>
-    /* Basic Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9fafb;
-      color: #333;
-      line-height: 1.6;
+      margin: 0;
+      font-family: Arial, sans-serif;
     }
     header {
-      background-color: #2a9d8f;
-      color: white;
-      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      padding: 10px 20px;
+      background-color: #f4f4f4;
     }
-    header h1 {
-      font-size: 1.8rem;
-      letter-spacing: 2px;
+    .logo img {
+      height: 50px;
+    }
+    .menu-toggle {
+      font-size: 26px;
       cursor: pointer;
     }
-    nav a {
+    .sidebar {
+      position: fixed;
+      right: -250px;
+      top: 0;
+      height: 100%;
+      width: 250px;
+      background-color: #333;
       color: white;
+      padding: 20px;
+      transition: right 0.3s ease-in-out;
+    }
+    .sidebar.active {
+      right: 0;
+    }
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 10px 0;
       text-decoration: none;
-      margin-left: 25px;
-      font-weight: 600;
-      transition: color 0.3s ease;
     }
-    nav a:hover {
-      color: #e9c46a;
+    .sidebar a:hover {
+      background-color: #444;
     }
-    .hero {
-      padding: 60px 20px;
+    .body-content {
+      padding: 40px;
       text-align: center;
-      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;
-      color: white;
-      min-height: 400px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
-    }
-    .hero h2 {
-      font-size: 3rem;
-      margin-bottom: 15px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      max-width: 600px;
-    }
-    .btn-primary {
-      background-color: #e76f51;
-      padding: 14px 30px;
-      border: none;
-      border-radius: 30px;
-      color: white;
-      font-size: 1.1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-primary:hover {
-      background-color: #d6543a;
-    }
-    .features {
-      max-width: 1000px;
-      margin: 40px auto;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 0 20px;
-    }
-    .feature-box {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      flex: 1 1 280px;
-      text-align: center;
-      transition: transform 0.3s ease;
-      cursor: default;
-    }
-    .feature-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    .feature-box h3 {
-      margin-bottom: 15px;
-      color: #264653;
-    }
-    .feature-box p {
-      color: #555;
-      font-size: 1rem;
-    }
-    footer {
-      background: #264653;
-      color: #fff;
-      text-align: center;
-      padding: 20px 10px;
-      margin-top: 60px;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        margin-top: 10px;
-      }
-      .hero h2 {
-        font-size: 2rem;
-      }
-      .features {
-        flex-direction: column;
-        gap: 30px;
-      }
+      font-size: 24px;
     }
   </style>
 </head>
 <body>
-  
-     <!-- Header with Hamburger Menu -->
-<style>
-  .topbar {
-    background-color: #2a9d8f;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    aign-items: center;
-    padding: 15px 20px;
-  }
-  .topbar h1 {
-    margin: 0;
-    font-size: 1.5rem;
-  }
-  .menu-icon {
-    font-size: 26px;
-    cursor: pointer;
-  }
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: -260px;
-    width: 240px;
-    height: 100%;
-    background-color: #264653;
-    color: white;
-    padding: 20px;
-    transition: left 0.3s;
-    z-index: 999;
-  }
-  .sidebar.active {
-    left: 0;
-  }
-  .sidebar h2 {
-    margin-top: 0;
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  .sidebar a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 12px 0;
-    font-size: 1.1rem;
-    border-bottom: 1px solid #ffffff20;
-  }
-  .sidebar a:hover {
-    background-color: #1d3557;
-  }
-  .login-icon {
-    font-size: 1.6rem;
-    text-align: center;
-    margin-bottom: 20px;
-    display: block;
-  }
-</style>
 
-<div class="topbar">
-  <h1>Bag2Buy</h1>
-  <span class="menu-icon" onclick="toggleMenu()">☰</span>
-</div>
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="Bag2Buy Logo">
+  </div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</header>
 
 <div class="sidebar" id="sidebar">
-  <!-- 👤 Login/Signup as icon -->
-  <a href="signin-signup.html" class="login-text">login/signup</a>
-  <!-- Other menu items -->
-  <a href="index.html">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="contact.html">Contact Us</a>
-  <a href="wallet.html">My Wallet</a>
+  <a href="#">Login / Signup</a>
+  <a href="#">Home</a>
+  <a href="#">About Us</a>
+  <a href="#">Contact Us</a>
+  <a href="#">Wallet</a>
+  <a href="#">My Orders</a>
+  <a href="#">Sell Now</a>
+</div>
+
+<div class="body-content">
+  Welcome to <strong>Bag2Buy</strong> <br> Becho, Kharido, Borrow Asaaani Se!
 </div>
 
 <script>
   function toggleMenu() {
-    document.getElementById('sidebar').classList.toggle('active');
+    document.getElementById("sidebar").classList.toggle("active");
   }
 </script>
-  
-  <header>
-   <a href="cart.html">View Cart</a>
-  </header>
-
-  <section class="hero">
-    <h2>Buy, Sell & Borrow Old and New Items Easily</h2>
-    <p>Get cash instantly for your old stuff and enjoy platform credits to shop more. Safe, easy & reliable.</p>
-    <a href="#" class="btn-primary">Start Selling Now</a>
-  </section>
-
-  <section class="features">
-    <div class="feature-box">
-      <h3>Instant Cash Offers</h3>
-      <p>Sell your items quickly and get 20% cash upfront, balance as platform credit.</p>
-    </div>
-    <div class="feature-box">
-      <h3>Wide Variety of Products</h3>
-      <p>Books, clothes, electronics & more. Find what you need or sell with ease.</p>
-    </div>
-    <div class="feature-box">
-      <h3>Secure Wallet System</h3>
-      <p>Manage your earnings and spend your platform credits seamlessly within Bag2Buy.</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Bag2Buy. All rights reserved.</p>
-  </footer>
 
 </body>
 </html>
